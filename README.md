@@ -5,9 +5,9 @@
 * Implement a simple microservice for tracking status of foosball games.
 
 # Our Foosball Rules:
-* Each game consist from sets
+* Each game consists of sets
 * We play in BO3 system, meaning that the first team that wins 2 sets, wins the game
-* Each set consist from goals
+* Each set consists of goals
 * The first team to score 10 goals wins a set
 * Goals, sets and games can only be incremented (no "minus" goals, sets or games are allowed)
 
@@ -24,7 +24,7 @@
 * (optional, if you plan to write tests) Some kind of tests framework, i.e. xUnit, nUnit, Unquote
 
 # Additional Notes:
-* Try to not spend more than 4 hours on this task. If you don’t manage to implement everything, no worries - we’d be very pleasantly surprised if you did
+* Try not to spend more than 4 hours on this task. If you don’t manage to implement everything, no worries - we’d be very pleasantly surprised if you did
 * Use common sense if something wasn't specified
 * Try to deliver a working solution
 * If possible keep your code on GitHub or at least use git to track changes
