@@ -1,30 +1,48 @@
-# Context:
-* Many of us are avid foosball players, but running around the office to check what is the status of the game is both tiring and wastes lots of our precious time. Therefore, we would appreciate a bit of help.
+# Feature Flag Service
 
-# Task:
-* Implement a simple microservice for tracking status of foosball games.
+## Context
 
-# Our Foosball Rules:
-* Each game consists of sets
-* We play in BO3 system, meaning that the first team that wins 2 sets, wins the game
-* Each set consists of goals
-* The first team to score 10 goals wins a set
-* Goals, sets and games can only be incremented (no "minus" goals, sets or games are allowed)
+As our engineering team grows, we need a better way to manage feature releases. We want to be able to deploy new code to production but keep the associated features hidden from users until they are ready. A simple, internal feature flag service would allow us to enable or disable features for different applications without a new deployment.
 
-# Business Requirements:
-* As an API user, I'd like to create and update status of a foosball game, so a progress can be tracked
-* As an API user, I'd like to list all games sorted by start date (descending), so I could check the details of the one that is interesting to me
-* As an API user, I'd like to see the details of a particular game, so I could check if it was one-sided
+## Task
 
-# Technical Requirements:
-* .NET Core
-* C# or F#
-* RESTful API
-* Some kind of data storage, i.e. a file, SQL or document database
-* (optional, if you plan to write tests) Some kind of tests framework, i.e. xUnit, nUnit, Unquote
+Your assignment is to design and implement a microservice for managing feature flags. The service will store the state of various flags across different environments and must keep a log of all changes. Client applications will query the service to check the state of these flags.
 
-# Additional Notes:
-* Try not to spend more than 4 hours on this task. If you don’t manage to implement everything, no worries - we’d be very pleasantly surprised if you did
-* Use common sense if something wasn't specified
-* Try to deliver a working solution
-* If possible keep your code on GitHub or at least use git to track changes
+### Business Rules
+
+- A feature flag is identified by a unique name.
+- A flag's state is environment-specific. It can be active in one environment and inactive in another.
+- By default, new flags are created in an inactive state across all environments.
+- Every change to a flag's state must be recorded in an audit log to track what changed and when it occurred.
+- The service should support gradual rollouts, allowing flags to be active for only a portion of users in an environment.
+
+### User Stories
+
+1. **As a developer,** I want to register a new feature flag in the system so that its rollout can be managed independently of deployments.
+2. **As a developer,** I want to retrieve a list of all existing feature flags so that I can get an overview of all managed features.
+3. **As a developer,** I want to view the complete configuration of a single flag across all environments at once so that I can understand its current state.
+4. **As a developer,** I want to activate or deactivate a feature flag for a specific environment so that I can control its visibility for testing or release.
+5. **As a developer,** I want to view the complete history of state changes for a flag so that I can audit when, and by whom, it was modified.
+6. **As a developer,** I want to remove a feature flag from the system entirely once the feature has been fully released and the code has been cleaned up.
+7. **As an application,** I need to check if a feature flag is currently active for my specific environment so that I can decide whether to expose the feature.
+8. **As a product manager,** I want to configure a flag to be active for a certain percentage of users in an environment to allow for a gradual rollout.
+
+### Technical Requirements
+
+- .NET with code in F# or C#.
+- RESTful API.
+- Data persistence (e.g., files or a database).
+- Test framework of your choice, if you plan to write tests.
+- Git for change tracking.
+
+## Solution
+
+- Try not to spend more than 4 hours on this task.
+- In case you don't implement everything, please document what's left and what you would do next.
+- If you use AI, highlight AI-aided parts, including the prompts and models you used.
+- For unspecified rules or behaviors, apply common sense and industry best practices.
+- Deliver a working solution and include instructions on how to run it.
+
+### Submission
+
+Provide a link to a GitHub repository with your solution to the recruitment team.
