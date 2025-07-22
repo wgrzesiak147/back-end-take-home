@@ -1,0 +1,90 @@
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore build results
+bin/
+obj/
+out/
+
+# Ignore Rider files
+.idea/
+
+# Ignore Visual Studio Code files
+.vscode/
+*.code-workspace
+
+# Ignore test results
+TestResults/
+*.coverage
+*.coveragexml
+*.testsettings
+*.vsmdi
+*.vsp
+*.vspx
+*.vspscc
+*.cache
+*.pdb
+
+# Ignore build artifacts
+*.dll
+*.exe
+*.app
+*.appx
+*.msi
+*.nupkg
+*.log
+
+# Ignore EF Core Migrations artifacts
+Migrations/*Snapshot.cs
+
+# Ignore NuGet packages
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+.nuget/
+
+# Ignore dotnet user-secrets
+secrets.json
+
+# Ignore local environment files
+.env
+.env.*
+
+# Ignore SQLite or other local databases (if used)
+*.db
+*.sqlite
+
+# Ignore ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+# Ignore temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+*.sln.docstates
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore JetBrains Rider
+.idea/
+
+# Ignore compiled Razor files
+**/obj/**/Razor/
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore dependency graph
+project.assets.json
+project.lock.json
+
+.vs/
